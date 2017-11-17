@@ -30,7 +30,7 @@ namespace WpfApp2
         char ch;
         char read(char x,ref int i)
         {
-            if (i < textBox1.Text.Length)
+            if (i+1 < textBox1.Text.Length)
             {
                 x = textBox1.Text[i];
                 
@@ -39,6 +39,8 @@ namespace WpfApp2
             else
             {
                 x = ' ';
+
+                i = textBox1.Text.Length;
             }
             return x;
         }
@@ -47,7 +49,7 @@ namespace WpfApp2
         {
             i = 0;
           
-            return form(ref i);
+            return form(ref i)&&i==textBox1.Text.Length;
         }
 
         bool form(ref int i)
